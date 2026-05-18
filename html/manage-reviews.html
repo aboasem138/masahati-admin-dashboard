@@ -5,68 +5,142 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Reviews - Masahati</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
 </head>
 
 <body>
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
+
         <div>
-            <div class="logo"><i class="fa-solid fa-building"></i> <span>Masahati</span></div>
+            <div class="logo">
+                <i class="fa-solid fa-building"></i>
+                <span>Masahati</span>
+            </div>
+
             <div class="menu">
-                <a href="#"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
-                <a href="pending-workspaces.html"><i class="fa-regular fa-clock"></i> Pending Workspaces</a>
-                <a href="manage-workspaces.html"><i class="fa-regular fa-building"></i> Manage Workspaces</a>
-                <a href="manage-reviews.html" class="active"><i class="fa-regular fa-star"></i> Manage Reviews</a>
+                <a href="#">
+                    <i class="fa-solid fa-table-columns"></i> Dashboard
+                </a>
+
+                <a href="pending-workspaces.html">
+                    <i class="fa-regular fa-clock"></i> Pending Workspaces
+                    <span class="badge">5</span>
+                </a>
+
+                <a href="manage-workspaces.html">
+                    <i class="fa-regular fa-building"></i> Manage Workspaces
+                </a>
+
+                <a href="manage-reviews.html" class="active">
+                    <i class="fa-regular fa-star"></i> Manage Reviews
+                </a>
             </div>
         </div>
+
         <div>
-            <a href="#" style="text-decoration:none;color:#444;display:flex;align-items:center;gap:10px;margin-bottom:25px;font-weight:500;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+
+            <div class="logout-container">
+                <a href="#" class="logout-link">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </a>
+            </div>
+
             <div class="support-box">
-                <h4>Need Help?</h4>
-                <p>If you need any assistance, we're here to help.</p><button class="support-btn">Support</button></div>
+
+                <h4>
+                    <i class="fa-regular fa-life-ring"></i> Need Help?
+                </h4>
+
+                <p>
+                    If you need any assistance, we're here to help.
+                </p>
+
+                <button class="support-btn">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
         </div>
+
     </aside>
 
+    <!-- MAIN -->
     <main class="main">
+
+        <!-- TOPBAR -->
         <div class="topbar">
-            <i class="fa-regular fa-moon" style="font-size:20px; cursor:pointer;"></i>
+
+            <i class="fa-regular fa-moon theme-toggle"></i>
+
             <div class="admin">
+
                 <div class="admin-info">
                     <h4>Admin</h4>
-                    <p>Super Admin</p>
+                    <p>Super Administrator</p>
                 </div>
-                <img src="https://i.pravatar.cc/100?img=12" alt="Admin Image">
+
+                <img src="https://i.pravatar.cc/100?img=12" alt="">
+
             </div>
+
         </div>
 
+        <!-- PAGE -->
         <h1 class="page-title">Manage Reviews</h1>
-        <p class="page-subtitle">Monitor and moderate user reviews and ratings across all workspaces.</p>
 
+        <p class="page-subtitle">
+            View, manage, and moderate all reviews across the platform.
+        </p>
+
+        <!-- TABLE -->
         <div class="table-card">
+
             <div class="table-header-custom">
-                <h3>User Reviews</h3>
+
+                <h3>All Reviews</h3>
+
+                <div class="total-reviews">
+                    Total Reviews: 128
+                </div>
+
             </div>
+
             <div class="table-wrapper">
+
                 <table>
+
                     <thead>
                         <tr>
-                            <th>User</th>
-                            <th>Workspace</th>
-                            <th>Rating</th>
-                            <th>Review Comment</th>
-                            <th>Date</th>
-                            <th>Actions</th>
+                            <th>USER</th>
+                            <th>WORKSPACE</th>
+                            <th>RATING</th>
+                            <th>REVIEW</th>
+                            <th>DATE</th>
+                            <th>ACTIONS</th>
                         </tr>
                     </thead>
+
+
                     <tbody id="reviewsTableBody"></tbody>
+
+
+
                 </table>
+
             </div>
+
         </div>
+
     </main>
 
-    <script src="js/admin.js"></script>
+    <script src="../js/admin.js"></script>
+
 </body>
 
 </html>
