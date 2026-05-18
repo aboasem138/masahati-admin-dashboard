@@ -1,6 +1,4 @@
-/* js/admin.js */
-
-/* ================= WORKSPACES ================= */
+/* ================= WORKSPACES DATA ================= */
 
 let activeWorkspaces = [
 
@@ -73,14 +71,13 @@ let activeWorkspaces = [
         createdAt: "May 8, 2024",
         createTime: "2:10 PM"
     }
-
 ];
 
-/* ================= RENDER PENDING WORKSPACES ================= */
+/* ================= WORKSPACES RENDER (MANAGE PAGE) ================= */
 
-function renderActiveWorkspaces() {
+function renderManageWorkspaces() {
 
-    const tbody = document.getElementById("pendingTableBody");
+    const tbody = document.getElementById("workspacesTableBody");
 
     if (!tbody) return;
 
@@ -92,89 +89,46 @@ function renderActiveWorkspaces() {
         <tr>
 
             <td>
-
                 <div class="workspace-meta">
-
                     <img src="${w.img}" class="w-img">
-
                     <div>
-
-                        <div class="w-name">
-                            ${w.name}
-                        </div>
-
-                        <div class="w-desc">
-                            ${w.desc}
-                        </div>
-
+                        <div class="w-name">${w.name}</div>
+                        <div class="w-desc">${w.desc}</div>
                     </div>
-
                 </div>
-
             </td>
 
             <td>
-
                 <div class="user-profile">
-
                     <img src="${w.ownerImg}" class="u-img">
-
                     <div>
-
-                        <div class="name">
-                            ${w.ownerName}
-                        </div>
-
-                        <div class="email">
-                            ${w.ownerEmail}
-                        </div>
-
+                        <div class="name">${w.ownerName}</div>
+                        <div class="email">${w.ownerEmail}</div>
                     </div>
-
                 </div>
-
             </td>
 
             <td>
-
                 <div class="city">
-
                     <i class="fa-solid fa-location-dot"></i>
-
-                    ${w.city.replace(",", ",<br>")}
-
+                    ${w.city}
                 </div>
-
             </td>
 
             <td>
-
-                <div class="date">
-                    ${w.createdAt}
-                </div>
-
-                <div class="time">
-                    ${w.createTime}
-                </div>
-
-            </td>
-
-            <td>
-
                 <span class="status-badge status-pending">
-
                     <i class="fa-solid fa-circle"></i>
-
-                    PENDING
-
+                    ${w.status}
                 </span>
-
             </td>
 
             <td>
+                <div class="date">${w.createdAt}</div>
+                <div class="time">${w.createTime}</div>
+            </td>
 
+            <td>
                 <div class="actions-cluster">
-
                     <button class="btn view-btn">
                         <i class="fa-regular fa-eye"></i>
                         View
@@ -189,9 +143,76 @@ function renderActiveWorkspaces() {
                         <i class="fa-solid fa-xmark"></i>
                         Reject
                     </button>
-
                 </div>
+            </td>
 
+        </tr>
+        `;
+    });
+
+    tbody.innerHTML = html;
+}
+
+/* ================= PENDING (OPTIONAL PAGE) ================= */
+
+function renderPendingWorkspaces() {
+
+    const tbody = document.getElementById("pendingTableBody");
+
+    if (!tbody) return;
+
+    let html = "";
+
+    activeWorkspaces.forEach(w => {
+
+        html += `
+        <tr>
+
+            <td>
+                <div class="workspace-meta">
+                    <img src="${w.img}" class="w-img">
+                    <div>
+                        <div class="w-name">${w.name}</div>
+                        <div class="w-desc">${w.desc}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td>
+                <div class="user-profile">
+                    <img src="${w.ownerImg}" class="u-img">
+                    <div>
+                        <div class="name">${w.ownerName}</div>
+                        <div class="email">${w.ownerEmail}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td>
+                <div class="city">
+                    <i class="fa-solid fa-location-dot"></i>
+                    ${w.city}
+                </div>
+            </td>
+
+            <td>
+                <div class="date">${w.createdAt}</div>
+                <div class="time">${w.createTime}</div>
+            </td>
+
+            <td>
+                <span class="status-badge status-pending">
+                    <i class="fa-solid fa-circle"></i>
+                    PENDING
+                </span>
+            </td>
+
+            <td>
+                <div class="actions-cluster">
+                    <button class="btn view-btn">View</button>
+                    <button class="btn approve-btn">Approve</button>
+                    <button class="btn reject-btn">Reject</button>
+                </div>
             </td>
 
         </tr>
@@ -210,15 +231,11 @@ const reviews = [
         userName: "Omar Al-Masri",
         userEmail: "omer@gmail.com",
         userImg: "https://i.pravatar.cc/100?img=12",
-
         workspace: "Focus Hub",
         workspaceImg: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=200",
-
         city: "Al-Rimal, Gaza",
-
         rating: 5,
-        review: "Amazing place!...",
-
+        review: "Amazing place!",
         date: "May 10, 2024",
         time: "10:30 AM"
     },
@@ -228,35 +245,13 @@ const reviews = [
         userName: "Sara Abu Salim",
         userEmail: "sara@gmail.com",
         userImg: "https://i.pravatar.cc/100?img=20",
-
         workspace: "The Desk",
         workspaceImg: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=200",
-
         city: "Al-Nuseirat, Gaza",
-
         rating: 4.5,
-        review: "Great space and good...",
-
+        review: "Great space!",
         date: "May 9, 2024",
         time: "04:20 PM"
-    },
-
-    {
-        id: 3,
-        userName: "Yousef Baraka",
-        userEmail: "yousef@gmail.com",
-        userImg: "https://i.pravatar.cc/100?img=33",
-
-        workspace: "Creative Space",
-        workspaceImg: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=200",
-
-        city: "Gaza City",
-
-        rating: 4,
-        review: "Very nice coworking...",
-
-        date: "May 8, 2024",
-        time: "09:45 AM"
     }
 ];
 
@@ -280,7 +275,7 @@ function generateStars(rating) {
     return stars;
 }
 
-/* ================= RENDER REVIEWS ================= */
+/* ================= REVIEWS RENDER ================= */
 
 function renderReviews() {
 
@@ -288,114 +283,57 @@ function renderReviews() {
 
     if (!tbody) return;
 
-    let html = '';
+    let html = "";
 
-    reviews.forEach(review => {
+    reviews.forEach(r => {
 
         html += `
         <tr>
 
             <td>
-
                 <div class="user-profile">
-
-                    <img src="${review.userImg}" class="u-img">
-
+                    <img src="${r.userImg}" class="u-img">
                     <div>
-
-                        <div class="name">
-                            ${review.userName}
-                        </div>
-
-                        <div class="email">
-                            ${review.userEmail}
-                        </div>
-
+                        <div class="name">${r.userName}</div>
+                        <div class="email">${r.userEmail}</div>
                     </div>
-
                 </div>
-
             </td>
 
             <td>
-
                 <div class="workspace-meta">
-
-                    <img src="${review.workspaceImg}" class="w-img">
-
+                    <img src="${r.workspaceImg}" class="w-img">
                     <div>
-
-                        <div class="w-name">
-                            ${review.workspace}
-                        </div>
-
+                        <div class="w-name">${r.workspace}</div>
                         <div class="city">
                             <i class="fa-solid fa-location-dot"></i>
-                            ${review.city}
+                            ${r.city}
                         </div>
-
                     </div>
-
                 </div>
-
             </td>
 
             <td>
-
                 <div class="rating-box">
-
-                    <div class="stars">
-                        ${generateStars(review.rating)}
-                    </div>
-
-                    <div class="rating-number">
-                        ${review.rating}
-                    </div>
-
+                    <div class="stars">${generateStars(r.rating)}</div>
+                    <div class="rating-number">${r.rating}</div>
                 </div>
-
             </td>
 
             <td>
-
-                <div class="review-text">
-                    ${review.review}
-                </div>
-
+                <div class="review-text">${r.review}</div>
             </td>
 
             <td>
-
-                <div class="date">
-                    ${review.date}
-                </div>
-
-                <div class="time">
-                    ${review.time}
-                </div>
-
+                <div class="date">${r.date}</div>
+                <div class="time">${r.time}</div>
             </td>
 
             <td>
-
                 <div class="actions-cluster">
-
-                    <button class="btn view-btn">
-
-                        <i class="fa-regular fa-eye"></i>
-                        View
-
-                    </button>
-
-                    <button class="btn delete-btn">
-
-                        <i class="fa-regular fa-trash-can"></i>
-                        Delete
-
-                    </button>
-
+                    <button class="btn view-btn">View</button>
+                    <button class="btn delete-btn">Delete</button>
                 </div>
-
             </td>
 
         </tr>
@@ -405,11 +343,12 @@ function renderReviews() {
     tbody.innerHTML = html;
 }
 
-/* ================= LOAD ================= */
+/* ================= INIT ================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    renderActiveWorkspaces();
+    renderManageWorkspaces();
+    renderPendingWorkspaces();
     renderReviews();
 
 });
