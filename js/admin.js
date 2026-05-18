@@ -219,9 +219,7 @@ function renderPendingWorkspaces() {
 
 /* ================= REVIEWS ================= */
 
-const reviews = [
-
-    {
+const reviews = [{
         id: 1,
         userName: "Omar Al-Masri",
         userEmail: "omer@gmail.com",
@@ -234,7 +232,6 @@ const reviews = [
         date: "May 10, 2024",
         time: "10:30 AM"
     },
-
     {
         id: 2,
         userName: "Sara Abu Salim",
@@ -247,6 +244,58 @@ const reviews = [
         review: "Great space!",
         date: "May 9, 2024",
         time: "04:20 PM"
+    },
+    {
+        id: 3,
+        userName: "Yousef Baraka",
+        userEmail: "yousef@gmail.com",
+        userImg: "https://i.pravatar.cc/100?img=33",
+        workspace: "Creative Space",
+        workspaceImg: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=200",
+        city: "Gaza City",
+        rating: 4.0,
+        review: "Very nice coworking...",
+        date: "May 8, 2024",
+        time: "09:45 AM"
+    },
+    {
+        id: 4,
+        userName: "Omar Al-Masri",
+        userEmail: "omer@gmail.com",
+        userImg: "https://i.pravatar.cc/100?img=12",
+        workspace: "Focus Hub",
+        workspaceImg: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=200",
+        city: "Al-Rimal, Gaza",
+        rating: 5,
+        review: "Amazing place!",
+        date: "May 10, 2024",
+        time: "10:30 AM"
+    },
+    {
+        id: 5,
+        userName: "Sara Abu Salim",
+        userEmail: "sara@gmail.com",
+        userImg: "https://i.pravatar.cc/100?img=20",
+        workspace: "The Desk",
+        workspaceImg: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=200",
+        city: "Al-Nuseirat, Gaza",
+        rating: 4.5,
+        review: "Great space!",
+        date: "May 9, 2024",
+        time: "04:20 PM"
+    },
+    {
+        id: 6,
+        userName: "Yousef Baraka",
+        userEmail: "yousef@gmail.com",
+        userImg: "https://i.pravatar.cc/100?img=33",
+        workspace: "Creative Space",
+        workspaceImg: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=200",
+        city: "Gaza City",
+        rating: 4.0,
+        review: "Very nice coworking...",
+        date: "May 8, 2024",
+        time: "09:45 AM"
     }
 ];
 
