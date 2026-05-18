@@ -127,24 +127,16 @@ function renderManageWorkspaces() {
                 <div class="time">${w.createTime}</div>
             </td>
 
+            
             <td>
                 <div class="actions-cluster">
-                    <button class="btn view-btn">
-                        <i class="fa-regular fa-eye"></i>
-                        View
-                    </button>
-
-                    <button class="btn approve-btn">
-                        <i class="fa-solid fa-check"></i>
-                        Approve
-                    </button>
-
-                    <button class="btn reject-btn">
-                        <i class="fa-solid fa-xmark"></i>
-                        Reject
-                    </button>
+                    <i class="fa-solid fa-eye"></i>
+                    <button class="btn view-btn">View</button>
+                    <i class="fa-solid fa-trash"></i>
+                    <button class="btn delete-btn">Delete</button>
                 </div>
             </td>
+            
 
         </tr>
         `;
@@ -209,8 +201,11 @@ function renderPendingWorkspaces() {
 
             <td>
                 <div class="actions-cluster">
+                    <i class="fa-solid fa-eye"></i>
                     <button class="btn view-btn">View</button>
+                    <i class="fa-solid fa-check icon-accept"></i>
                     <button class="btn approve-btn">Approve</button>
+                    <i class="fa-solid fa-xmark icon-reject"></i>
                     <button class="btn reject-btn">Reject</button>
                 </div>
             </td>
@@ -331,7 +326,9 @@ function renderReviews() {
 
             <td>
                 <div class="actions-cluster">
+                    <i class="fa-solid fa-eye"></i>
                     <button class="btn view-btn">View</button>
+                    <i class="fa-solid fa-trash"></i>
                     <button class="btn delete-btn">Delete</button>
                 </div>
             </td>
